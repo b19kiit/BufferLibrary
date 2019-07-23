@@ -26,7 +26,7 @@ int main(int argc, char const *argv[]) {
 
   int retintiger=5; double retdecimal=2.2;
   char retcstring[13];
-  buf.init_read();
+  buf.init_read();/*initialising read stream of the buffer*/
   buf.read((char*)(&retintiger), sizeof(intiger));
   buf.read((char*)(&retdecimal), sizeof(double));
   buf.read(retcstring, 12);

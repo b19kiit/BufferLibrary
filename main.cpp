@@ -7,7 +7,7 @@ Description:To show some functionalities of OpenSource C++ library buffer.h
 #include <iostream>
 #include <vector>
 #include <fstream>
-#include "HeaderFiles/buffer.h"
+#include "buffer.h"
 
 using namespace std;
 

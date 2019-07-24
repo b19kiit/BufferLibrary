@@ -163,9 +163,69 @@ The job of this function is to free the memory allocated by the Buffer
   cout<<"Size of buffer:" << buf._size();
 ```
 
+### Buffer I/O | Storing and Loading buffer from file
 
+### > write_in_file( ofstream* )
+This function can be used to store the data in the Buffer in the File pointer by (std::ofstream*) pointer
+This function will open or close any file stream, it will just use the given filestream in (std::ofstream*) pointer to write the file
+```c++
 
+//using write_in_file() to write the buffer in "fileforbuffer" file
+#include <fstream>
 
+using namespace std;
+
+int main(int argc, char const *argv[]) {
+
+  int intiger=5; double decimal=2.2222222; char cstring[] = "HelloBuffer";
+
+  Buffer buf;//creating new buffer
+  //adding some data in the buffer
+  buf.write((char*)(&intiger), sizeof(intiger));
+  buf.write(reinterpret_cast<char*>(&decimal), sizeof(double));
+  buf.write(cstring, 12);
+
+  ofstream file("fileforbuffer", ios::binary);//opening output file-stream
+
+  if( file.is_open() ){
+    buf.write_in_file(&file);//writing the buffer in the output file-stream pointed by file
+    file.close();//closing the file
+  }
+
+  buf.clear();
+
+  return 0;
+}
+
+```
+```c++
+//using write_in_file() to append the buffer in "stackfileforbuffer" file
+#include <fstream>
+
+using namespace std;
+
+int main(int argc, char const *argv[]) {
+
+  int intiger=5; double decimal=2.2222222; char cstring[] = "HelloBuffer";
+
+  Buffer buf;//creating new buffer
+  //adding some data in the buffer
+  buf.write((char*)(&intiger), sizeof(intiger));
+  buf.write(reinterpret_cast<char*>(&decimal), sizeof(double));
+  buf.write(cstring, 12);
+
+  ofstream file("stackfileforbuffer", ios::binary | ios::app);//opening output file-stream
+
+  if( file.is_open() ){
+    buf.write_in_file(&file);//writing the buffer in the output file-stream pointed by file
+    file.close();//closing the file
+  }
+
+  buf.clear();
+
+  return 0;
+}
+```
 
 
 

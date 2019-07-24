@@ -4,7 +4,7 @@ A C++ library to store buffer
 ## Purpose
 Made to store and retrieve buffer of any object on the RAM and Store it in Files when required
 
-Its usage is mainly targeted to simplify the transfer of Data as a buffer with the platform that supports c++ addons (For eg. NodeJS and Python) and make it easier to store and retrieve buffer from the objects of C++ addons supporting environments.
+Its usage is mainly targeted to simplify the transfer of Data as a buffer with the platform that supports c++ addons (For eg. NodeJS and Python) and make it easier to store and retrieve buffer from the objects/variables of environments that support c++ addons/extensions.
 
 ## Usage
 ### Using the Constructor

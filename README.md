@@ -95,10 +95,10 @@ This function must be called at least ones between the first piece of data getti
   And Constructor Buffer can not point read_stream to beginning of the buffer as,
   no begin of the buffer exists at that point
 */
-  int intiger=5; double decimal=2.2222222; char cstring[] = "HelloBuffer";
+  int integer=5; double decimal=2.2222222; char cstring[] = "HelloBuffer";
 
   Buffer buf;//creating new buffer
-  buf.write((char*)(&intiger), sizeof(intiger));
+  buf.write((char*)(&integer), sizeof(integer));
   buf.write(reinterpret_cast<char*>(&decimal), sizeof(double));
   buf.write(cstring, 12);
 
@@ -122,7 +122,7 @@ And this function assures that the read stream is pointed to the beginning of th
 
 ```c++
 
-  int intiger=5; double decimal=2.2222222; char cstring[] = "HelloBuffer";
+  int integer=5; double decimal=2.2222222; char cstring[] = "HelloBuffer";
 
   Buffer buf;//creating new buffer
   buf.write_and_init_read((char*)(&integer), sizeof(integer));
@@ -149,10 +149,10 @@ The job of this function is to free the memory allocated by the Buffer
 
 ```c++
 
-  int intiger=5; double decimal=2.2222222; char cstring[] = "HelloBuffer";
+  int integer=5; double decimal=2.2222222; char cstring[] = "HelloBuffer";
 
   Buffer buf;//creating new buffer
-  buf.write_and_init_read((char*)(&intiger), sizeof(intiger));
+  buf.write_and_init_read((char*)(&integer), sizeof(integer));
   buf.write_and_init_read(reinterpret_cast<char*>(&decimal), sizeof(double));
   buf.write_and_init_read(cstring, 12);
   
@@ -177,7 +177,7 @@ using namespace std;
 
 int main(int argc, char const *argv[]) {
 
-  int intiger=5; double decimal=2.2222222; char cstring[] = "HelloBuffer";
+  int integer=5; double decimal=2.2222222; char cstring[] = "HelloBuffer";
 
   Buffer buf;//creating new buffer
   //adding some data in the buffer

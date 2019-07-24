@@ -44,7 +44,7 @@ The data is then copied as a buffer and append in the object of the buffer class
   Buffer buf;//Creating an object of Buffer
   
   int integer=5;
-  buf.write((char*)(&intiger), sizeof(integer));//buffer of intiger is appeded in the object `buf`
+  buf.write((char*)(&integer), sizeof(integer));//buffer of integer is appeded in the object `buf`
   
   double d=123.8989;
   buf.write((char*)(&d), sizeof(d));

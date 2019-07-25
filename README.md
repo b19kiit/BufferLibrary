@@ -227,11 +227,19 @@ int main(int argc, char const *argv[]) {
 }
 ```
 
+### > read_from_file( ifstream* )
+
+Can be used to retrive data from a file made using write_to_file( ifstream* ) or any file following format to the Buffer
+
+This function will first clear any existing data in the Buffer object and then read data from the file
+
+This file needs an ifstream pointer that points to the file-stream that it must read
+
+```c++
 
 
 
-
-
+```
 
 
 

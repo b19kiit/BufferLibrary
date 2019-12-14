@@ -77,6 +77,10 @@ public:
 
     //platform_init() : to be used when no Constructor is called and memory is allocated arbitrarily to the Buffer object.
     //It has platform_init_used flag variable to make sure it dysfunctional when called illegally, although this OOP safety mechanism can fail under some circumstances.
+    /*NOTE: platform_init() is not safe to use, prevent its use if not necessary
+            It is recommended to allocate memory for Buffer* pointer using calloc, else all elements in Buffer class may not behave as required
+            This issue can be resolved if someone can find a way to manualy initialise std::list<> pieces in platform_init();
+    */
     void platform_init(){//!!!don't use it if not needed!!!
         if(!platform_init_used)return;
 
